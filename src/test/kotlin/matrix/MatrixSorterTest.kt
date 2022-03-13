@@ -9,8 +9,8 @@ import kotlin.test.assertTrue
 class MatrixSorterTest {
     @Test
     fun `can sort by custom strategy`() {
-        val sourceMatrix: Matrix = arrayOf(intArrayOf(1, 1, 1), intArrayOf(0, 0, 0))
-        val expectedMatrix: Matrix = arrayOf(intArrayOf(0, 0, 0), intArrayOf(1, 1, 1))
+        val sourceMatrix: Matrix = arrayOf(intArrayOf(1, 1, 1), intArrayOf(0, 0, 0), intArrayOf(1, 2, 2))
+        val expectedMatrix: Matrix = arrayOf(intArrayOf(0, 0, 0), intArrayOf(1, 1, 1), intArrayOf(1, 2, 2))
         val lineProjectionStrategy = mockk<LineProjectionStrategy>()
 
         val lineSlot = slot<IntArray>()
@@ -25,8 +25,8 @@ class MatrixSorterTest {
 
     @Test
     fun `can sort reversed by custom strategy`() {
-        val sourceMatrix: Matrix = arrayOf(intArrayOf(0, 0, 0), intArrayOf(1, 1, 1))
-        val expectedMatrix: Matrix = arrayOf(intArrayOf(1, 1, 1), intArrayOf(0, 0, 0))
+        val sourceMatrix: Matrix = arrayOf(intArrayOf(0, 0, 0), intArrayOf(1, 1, 1), intArrayOf(1, 2, 2))
+        val expectedMatrix: Matrix = arrayOf(intArrayOf(1, 2, 2), intArrayOf(1, 1, 1), intArrayOf(0, 0, 0))
 
         val lineProjectionStrategy = mockk<LineProjectionStrategy>()
         val lineSlot = slot<IntArray>()
